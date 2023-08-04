@@ -5,38 +5,44 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## API Endpoints
 #### Products
-- Index 
-- Show
-- Create [token required]
+- Index: 'http://localhost:3000/products' [GET]
+- Show: 'http://localhost:3000/products/:id' [GET]
+- Create [token required]: 'http://localhost:3000/products' [POST]
 - [OPTIONAL] Top 5 most popular products 
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
-- Index [token required]
-- Show [token required]
-- Create N[token required]
+- Index [token required]: 'http://localhost:3000/uers' [GET]
+- Show [token required]: 'http://localhost:3000/users/:id' [GET]
+- Create N[token required]: 'http://localhost:3000/users' [Post]
 
 #### Orders
-- Current Order by user (args: user id)[token required]
+- Index [token required]: 'http://localhost:3000/orders' [GET]
+- Current Order by user (args: user id)[token required]: 'http://localhost:3000/order-product/:userid
 - [OPTIONAL] Completed Orders by user (args: user id)[token required]
 
 ## Data Shapes
 #### Product
--  id
-- name
-- price
-- [OPTIONAL] category
+- id: serial
+- name: varchar(100) NOT NULL
+- price: integer NOT NULL
+- [OPTIONAL] category: varchar(100)
 
 #### User
-- id
-- firstName
-- lastName
-- password
+- id: serial
+- firstName: varchar(100) NOT NULL
+- lastName: varchar(100) NOT NULL
+- username: varchar(100) NOT NULL
+- password: varchar(100) NOT NULL
+
+#### Orders-Product
+- id: serial
+- id of each product in the order: type id of the order table
+- quantity of each product in the order: number
+- user_id: type id of the user table
+- status of order (active or complete): varcahr(50)
 
 #### Orders
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
+-id -- serial
+-user_id: type id of the user table
 

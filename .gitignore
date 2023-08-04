@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+ 
+# dependencies
+/node_modules
+
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+jspm_packages/
+
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+lerna-debug.log
+.serverless
+
+.env
+.env.test
+.custom-env
+
+# cache files
+
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+.eslintcache
+.cache
+.parcel-cache
+.npm
+
+# vs editor-related files
+
+.vscode-test
+.vscode

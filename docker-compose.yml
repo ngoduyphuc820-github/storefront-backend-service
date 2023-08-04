@@ -2,11 +2,14 @@ version: '3.9'
 
 services:
   postgres:
-    image: postgres
+    image: "postgres"
     ports:
       - '5432:5432'
-    env_file:
-      - .env
+    environment:
+      POSTGRES_DB: ${PROSTGRES_DB}
+      POSTGRES_USER: ${PROSTGRES_USER}
+      POSTGRES_PASSWORD: ${PROSTGRES_PASSWORD}
+      PGDATA: /data/postgres
     volumes:
       - 'postgres:/var/lib/postgresql/data'
 
