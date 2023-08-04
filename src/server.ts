@@ -1,15 +1,25 @@
-import express, { Request, Response } from 'express'
-import bodyParser from 'body-parser'
+import express, { Request, Response } from 'express';
+import bodyParser from 'body-parser';
+import productRoutes from './handlers/product-routes';
+import userRoutes from './handlers/users-routes';
+import orderRoutes from './handlers/order-routes';
+import dotenv from 'dotenv';
 
-const app: express.Application = express()
-const address: string = "0.0.0.0:3000"
+dotenv.config();
 
-app.use(bodyParser.json())
+const app: express.Application = express();
+const { PORT } = process.env;
+
+app.use(bodyParser.json());
 
 app.get('/', function (req: Request, res: Response) {
-    res.send('Hello World!')
-})
+    res.send('Hello World!');
+});
 
-app.listen(3000, function () {
-    console.log(`starting app on: ${address}`)
-})
+productRoutes(app);
+userRoutes(app);
+orderRoutes(app);
+
+app.listen(PORT, function () {
+    console.log(`starting app on: ${PORT}`);
+});
