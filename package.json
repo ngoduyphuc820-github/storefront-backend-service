@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "npx tsc && node dist/src/server.js",
-    "test": "ENV=test && npx tsc && db-migrate --env test up && jasmine && npm run reset-test-db",
+    "test": "export ENV=test && npx tsc && db-migrate --env test up && jasmine && npm run reset-test-db",
     "reset-test-db": "db-migrate --env test reset",
     "dev": "nodemon src/server.ts",
     "jasmine": "jasmine",
